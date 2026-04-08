@@ -1,0 +1,19 @@
+# .gitignore - GitHub에 올리면 안 되는 파일 목록
+#
+# [가장 중요] .env 파일은 절대 올리면 안 됩니다.
+# JWT 토큰, 서버 주소 등 비밀값이 들어있습니다.
+# 실수로 올리면 토큰을 즉시 폐기하고 재발급해야 합니다.
+.env
+
+# Python 캐시 파일 (자동 생성, 불필요)
+__pycache__/
+*.pyc
+*.pyo
+
+# 테스트 커버리지 결과 파일 (자동 생성)
+.coverage
+.pytest_cache/
+
+# 백업 파일
+*.bak
+server_SSE.py

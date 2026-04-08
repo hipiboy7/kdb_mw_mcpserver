@@ -1,0 +1,35 @@
+# .dockerignore - Docker 이미지 빌드 시 제외할 파일 목록
+#
+# [왜 필요한가?]
+# COPY . . 명령으로 모든 파일을 복사할 때
+# 이미지에 포함되면 안 되는 파일들을 여기서 제외합니다.
+# 이미지 크기를 줄이고 보안을 강화합니다.
+
+# 비밀값이 담긴 환경변수 파일 (절대 이미지에 포함되면 안 됨)
+# 실행 시 docker run --env-file .env 로 외부에서 주입합니다.
+.env
+
+# Python 캐시 파일 (빌드 시 자동 생성되므로 불필요)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 테스트 관련 파일 (운영 이미지에 불필요)
+tests/
+.pytest_cache/
+.coverage
+
+# 개발용 파일 (운영 이미지에 불필요)
+test_real_server.py
+*.bak
+server_SSE.py
+
+# 문서 파일 (운영 이미지에 불필요)
+docs/
+Lessons_Learned.md
+*.md
+
+# Git 관련 파일
+.git/
+.gitignore
